@@ -10,4 +10,10 @@ public class LoginController {
 	public String login() {
 		return "login";
 	}
+
+	@RequestMapping(value = "/home")
+	public String showRegister() {
+		System.out.println("hello from home");
+		return "home";
+	}
 }
