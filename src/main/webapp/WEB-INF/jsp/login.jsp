@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+<%@ include file="../layouts/taglib.jsp"%>
+
 <style>
 .form-signin {
 	max-width: 330px;
@@ -42,22 +45,12 @@
 }
 </style>
 
-<html>
-<head>
-<title>Login Page</title>
-</head>
-<body onload='document.f.j_username.focus();'>
-	<h3>Login with Username and Password</h3>
-	<form class="form-signin" role="form" action="/j_spring_security_check"
-		method="POST">
-		<h2 class="form-signin-heading">Please sign in</h2>
-
-		<input type="text" name="j_username" class="form-control"
-			placeholder="UserName" required autofocus> <input
-			type="password" name="j_password" class="form-control"
-			placeholder="Password" required autofocus>
-		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
-			in</button>
-	</form>
-</body>
-</html>
+<form class="form-signin" role="form"
+	action="<spring:url value="/j_spring_security_check" />" method="POST">
+	<h2 class="form-signin-heading">Please sign in</h2>
+	<input type="text" name="j_username" class="form-control"
+		placeholder="Name" required autofocus> <input type="password"
+		name="j_password" class="form-control" placeholder="Password" required>
+	<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
+		in</button>
+</form>
